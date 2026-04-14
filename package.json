@@ -1,7 +1,7 @@
 {
   "name": "sinsajo-image-generator",
-  "version": "2.0.0",
-  "description": "AI Visual Toolkit: Image generation, diagram rendering, and video visual packages — by Sinsajo Creators",
+  "version": "3.0.0",
+  "description": "AI Visual Toolkit: Multi-provider image generation (6 providers + smart routing), diagram rendering, and video visual packages — by Sinsajo Creators",
   "scripts": {
     "generate": "npx tsx image-generator/generate-image.ts"
   },
@@ -9,10 +9,18 @@
     "image-generation",
     "gemini",
     "openrouter",
+    "ideogram",
+    "flux",
+    "recraft",
+    "openai",
     "ai",
     "cli",
     "text-to-image",
     "image-editing",
+    "multi-provider",
+    "smart-routing",
+    "ad-creative",
+    "product-mockup",
     "excalidraw",
     "diagram",
     "video-visuals",
