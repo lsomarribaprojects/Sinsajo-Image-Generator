@@ -1,0 +1,24 @@
+{
+  "name": "sinsajo-image-generator",
+  "version": "1.0.0",
+  "description": "Generate and edit images using Gemini API or OpenRouter from the command line",
+  "main": "generate-image.ts",
+  "scripts": {
+    "generate": "npx tsx generate-image.ts"
+  },
+  "keywords": [
+    "image-generation",
+    "gemini",
+    "openrouter",
+    "ai",
+    "cli",
+    "text-to-image",
+    "image-editing"
+  ],
+  "author": "Sinsajo Creators",
+  "license": "MIT",
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
