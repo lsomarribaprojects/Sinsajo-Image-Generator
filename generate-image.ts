@@ -3,11 +3,17 @@
  * Sinsajo Image Generator
  * Generate and edit images using Gemini API (direct) or OpenRouter.
  *
+ * Built by Sinsajo Creators — AI-powered digital marketing agency
+ * https://www.sinsajocreators.com | #WeMakeYourBrandFly
+ *
  * Usage: npx tsx generate-image.ts --prompt "description" [--image input.png] [--output output.png] [--aspect 16:9] [--model model-id]
  *
  * Supports two backends:
  * 1. Gemini API (preferred) — set GEMINI_API_KEY
  * 2. OpenRouter (fallback) — set OPENROUTER_API_KEY
+ *
+ * @author Sinsajo Creators <sales@sinsajocreators.com>
+ * @license MIT
  */
 
 import fs from "fs";

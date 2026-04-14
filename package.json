@@ -15,8 +15,13 @@
     "text-to-image",
     "image-editing"
   ],
-  "author": "Sinsajo Creators",
+  "author": "Sinsajo Creators <sales@sinsajocreators.com> (https://www.sinsajocreators.com)",
   "license": "MIT",
+  "homepage": "https://www.sinsajocreators.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lsomarribaprojects/Sinsajo-Image-Generator"
+  },
   "devDependencies": {
     "tsx": "^4.19.0",
     "typescript": "^5.7.0"

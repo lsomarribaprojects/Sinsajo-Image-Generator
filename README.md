@@ -1,4 +1,16 @@
-# Sinsajo Image Generator
+<p align="center">
+  <strong>Sinsajo Image Generator</strong><br>
+  <em>by <a href="https://www.sinsajocreators.com">Sinsajo Creators</a></em>
+</p>
+
+<p align="center">
+  <a href="https://www.sinsajocreators.com">Website</a> &middot;
+  <a href="https://instagram.com/sinsajocreators">Instagram</a> &middot;
+  <a href="https://facebook.com/sinsajocreators">Facebook</a> &middot;
+  <a href="https://linkedin.com/company/sinsajocreators">LinkedIn</a>
+</p>
+
+---
 
 Generate and edit images from the command line using **Gemini API** or **OpenRouter**.
 
@@ -132,6 +144,37 @@ cp generate-image.ts .claude/skills/image-generation/scripts/
 
 ---
 
+## About Sinsajo Creators
+
+**[Sinsajo Creators](https://www.sinsajocreators.com)** is an AI-powered digital marketing agency that transforms content creators into profitable brands through strategic communication, AI automation, and innovative digital solutions.
+
+**#WeMakeYourBrandFly**
+
+### What We Do
+
+- **AI Marketing Automation** — Chatbots, AI agents, and intelligent workflows
+- **Content Creation** — Editorial design, branding, and visual assets
+- **Web Development** — Custom apps, SaaS platforms, and landing pages
+- **Social Media Management** — Strategy, content, and community growth
+- **CRM & WhatsApp Automation** — Omnichannel engagement at scale
+
+### Where We Are
+
+USA (Des Moines, IA & Clearwater, FL) serving clients across the US, Mexico, Colombia, and Latin America. Fully bilingual (English & Spanish).
+
+### Get in Touch
+
+| Channel | Contact |
+|---------|---------|
+| Web | [www.sinsajocreators.com](https://www.sinsajocreators.com) |
+| Email | [sales@sinsajocreators.com](mailto:sales@sinsajocreators.com) |
+| WhatsApp | [+1 (609) 288-5466](https://wa.me/16092885466) |
+| Instagram | [@sinsajocreators](https://instagram.com/sinsajocreators) |
+| Facebook | [@sinsajocreators](https://facebook.com/sinsajocreators) |
+| LinkedIn | [@sinsajocreators](https://linkedin.com/company/sinsajocreators) |
+
+---
+
 ## License
 
-MIT - Built by [Sinsajo Creators](https://github.com/lsomarribaprojects)
+MIT - Built with AI by [Sinsajo Creators](https://www.sinsajocreators.com)
