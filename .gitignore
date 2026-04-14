@@ -1,6 +1,7 @@
 node_modules/
 generated/
+output/
 .env
 .env.local
-*.png
-!*.example
+__pycache__/
+*.pyc

@@ -1,6 +1,6 @@
 <p align="center">
   <strong>Sinsajo Image Generator</strong><br>
-  <em>by <a href="https://www.sinsajocreators.com">Sinsajo Creators</a></em>
+  <em>AI Visual Toolkit by <a href="https://www.sinsajocreators.com">Sinsajo Creators</a></em>
 </p>
 
 <p align="center">
@@ -12,134 +12,130 @@
 
 ---
 
-Generate and edit images from the command line using **Gemini API** or **OpenRouter**.
+Three AI-powered visual tools in one repo. Pick the one you need.
 
-Text-to-image, image editing, aspect ratio control — one script, zero dependencies beyond `tsx`.
+## Tools
+
+### 1. [Image Generator](image-generator/) — Text to Image & Image Editing
+
+Generate images from text prompts or edit existing images using Gemini API or OpenRouter.
+
+```bash
+cd image-generator
+npx tsx generate-image.ts --prompt "A futuristic city at sunset"
+```
+
+**Use for:** Logos, thumbnails, banners, social media assets, product mockups, photo editing.
+
+| Feature | Details |
+|---------|---------|
+| Backends | Gemini API (free tier) or OpenRouter |
+| Input | Text prompt, optional source image |
+| Output | PNG image |
+| Aspect ratios | 1:1, 16:9, 9:16, 4:3, 3:2 |
+
+[Read full docs →](image-generator/README.md)
 
 ---
 
-## Quick Start
+### 2. [Diagram Generator](diagram-generator/) — Excalidraw to PNG
+
+Create architecture diagrams, flowcharts, and process maps as Excalidraw JSON, then render to high-resolution PNG.
 
 ```bash
-# 1. Clone
+cd diagram-generator
+python render_excalidraw.py my-diagram.excalidraw --output diagram.png
+```
+
+**Use for:** Architecture diagrams, flowcharts, system diagrams, process maps, technical documentation.
+
+| Feature | Details |
+|---------|---------|
+| Input | `.excalidraw` JSON file |
+| Output | PNG (retina 2x by default) |
+| Engine | Playwright + Chromium (headless) |
+| Templates | Copy-paste element templates included |
+
+[Read full docs →](diagram-generator/README.md)
+
+---
+
+### 3. [Video Visuals](video-visuals/) — Narrative Visual Packages
+
+Generate complete sets of themed visuals for videos, presentations, or educational content. Six distinct visual styles to match any brand or topic.
+
+```bash
+cd image-generator
+npx tsx generate-image.ts \
+  --prompt "Fondo crema (#F5F0E8). Sketchnote hand-drawn: 5 steps to build a SaaS..." \
+  --aspect 16:9
+```
+
+**Use for:** YouTube video visuals, course materials, presentations, infographics, social media carousels.
+
+| Theme | Style | Best For |
+|-------|-------|----------|
+| Sketchnote | Hand-drawn doodles on cream/colored backgrounds | Education, tutorials |
+| Neon | Glowing elements on dark purple | Tech, AI, innovation |
+| Ocean | Glass morphism on deep blue | Products, executive |
+| Clean | Flat design on white | Business, LinkedIn |
+| Pizarra | Chalk on green chalkboard | Courses, step-by-step |
+| Infografia | Data-driven on white/gray | Reports, metrics |
+
+[Read full docs →](video-visuals/README.md)
+
+---
+
+## Quick Setup
+
+```bash
+# Clone the repo
 git clone https://github.com/lsomarribaprojects/Sinsajo-Image-Generator.git
 cd Sinsajo-Image-Generator
 
-# 2. Install
+# Install Node dependencies (for Image Generator & Video Visuals)
 npm install
 
-# 3. Set your API key
+# Set your API key
 cp .env.example .env
-# Edit .env and add your GEMINI_API_KEY or OPENROUTER_API_KEY
+# Edit .env → add GEMINI_API_KEY or OPENROUTER_API_KEY
 
-# 4. Generate
-npx tsx generate-image.ts --prompt "A futuristic city at sunset"
+# For Diagram Generator (Python 3.11+):
+cd diagram-generator
+pip install playwright && playwright install chromium
 ```
 
 ## API Keys
 
-You need **one** of these:
+You need **one** of these for the Image Generator and Video Visuals:
 
-| Provider | Key | Free Tier | Get it at |
-|----------|-----|-----------|-----------|
-| **Gemini** (preferred) | `GEMINI_API_KEY` | Yes | [aistudio.google.com/apikey](https://aistudio.google.com/apikey) |
-| **OpenRouter** | `OPENROUTER_API_KEY` | Limited | [openrouter.ai/keys](https://openrouter.ai/keys) |
+| Provider | Free Tier | Get it at |
+|----------|-----------|-----------|
+| **Gemini** (recommended) | Yes | [aistudio.google.com/apikey](https://aistudio.google.com/apikey) |
+| **OpenRouter** | Limited | [openrouter.ai/keys](https://openrouter.ai/keys) |
 
-Set the key in `.env` or as an environment variable:
-
-```bash
-export GEMINI_API_KEY=your_key_here
-```
+The Diagram Generator uses no API — it renders locally with Playwright.
 
 ---
 
-## Usage
+## Use as Claude Code Skills
+
+Drop any tool into a project's `.claude/skills/` directory:
 
 ```bash
-npx tsx generate-image.ts --prompt "DESCRIPTION" [OPTIONS]
-```
-
-### Options
-
-| Flag | Required | Description |
-|------|----------|-------------|
-| `--prompt` | Yes | What to generate or how to edit |
-| `--image` | No | Input image path (for editing existing images) |
-| `--output` | No | Output path (default: `generated/img-{timestamp}.png`) |
-| `--aspect` | No | Aspect ratio: `1:1`, `16:9`, `9:16`, `4:3`, `3:2` (default: `1:1`) |
-| `--model` | No | Model ID override |
-
-### Models
-
-| Model | Backend | Best for |
-|-------|---------|----------|
-| `gemini-2.5-flash-image` | Gemini | Fast, good quality (default) |
-| `google/gemini-2.5-flash-preview-image-generation` | OpenRouter | Fast via OpenRouter |
-| `google/gemini-2.5-pro-preview-image-generation` | OpenRouter | Higher quality, more detail |
-
----
-
-## Examples
-
-### Text to Image
-
-```bash
-npx tsx generate-image.ts --prompt "A minimalist logo with the letter S in cyan on dark background"
-```
-
-### Edit an Existing Image
-
-```bash
-npx tsx generate-image.ts \
-  --prompt "Remove the background and make it transparent" \
-  --image ./photo.png
-```
-
-### YouTube Thumbnail (16:9)
-
-```bash
-npx tsx generate-image.ts \
-  --prompt "Futuristic dashboard UI with charts and graphs, bold text 'LAUNCH DAY'" \
-  --aspect 16:9 \
-  --output ./thumbnail.png
-```
-
-### Instagram Story (9:16)
-
-```bash
-npx tsx generate-image.ts \
-  --prompt "Gradient background with motivational quote in white serif font" \
-  --aspect 9:16
-```
-
-### Pro Quality
-
-```bash
-npx tsx generate-image.ts \
-  --prompt "Detailed architectural blueprint of a modern building" \
-  --model google/gemini-2.5-pro-preview-image-generation
-```
-
----
-
-## Output
-
-Images are saved to `generated/` by default. The script outputs machine-readable lines:
-
-```
-IMAGE:/absolute/path/to/generated/img-1234567890.png
-TEXT:Optional text response from the model
-```
-
----
-
-## Use as Claude Code Skill
-
-Drop this into any project's `.claude/skills/` directory to use it as a Claude Code skill:
-
-```bash
+# Image Generator
 mkdir -p .claude/skills/image-generation/scripts
-cp generate-image.ts .claude/skills/image-generation/scripts/
+cp image-generator/generate-image.ts .claude/skills/image-generation/scripts/
+
+# Diagram Generator
+mkdir -p .claude/skills/excalidraw-diagram/references
+cp diagram-generator/render_excalidraw.py .claude/skills/excalidraw-diagram/references/
+cp diagram-generator/references/* .claude/skills/excalidraw-diagram/references/
+
+# Video Visuals (prompt templates — works with Image Generator)
+mkdir -p .claude/skills/video-visuals/assets
+cp video-visuals/README.md .claude/skills/video-visuals/SKILL.md
+cp video-visuals/assets/* .claude/skills/video-visuals/assets/
 ```
 
 ---
