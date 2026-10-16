@@ -5,3 +5,5 @@ output/
 .env.local
 __pycache__/
 *.pyc
+.env.*
+!.env.example
